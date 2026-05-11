@@ -10,7 +10,7 @@ export default function HeroSection() {
       {/* Honeycomb background image */}
       <div className="absolute inset-0">
         <Image
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Bg-Pic-pHwvNnfOyrpzbw4vjMlsqvocDJEb73.png"
+          src="/Hero.png"
           alt=""
           fill
           className="object-cover"
@@ -56,56 +56,6 @@ export default function HeroSection() {
                 priority
               />
             </motion.div>
-
-            {/* Shop hexagon button - left side */}
-            <motion.a
-              href="#shop"
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.8, duration: 0.6 }}
-              whileHover={{ scale: 1.08 }}
-              className="absolute top-9/41 cursor-pointer"
-              style={{ 
-                left: '6.5%',
-                transform: 'translate(-50%, -50%)',
-                width: 'clamp(50px, 10vw, 120px)',
-                aspectRatio: '1 / 1.167'
-              }}
-            >
-              <div className="relative w-full h-full">
-                <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/button-Gp27Y5MOESi8d11mR6lBqIu9KahNFz.png"
-                  alt="Shop"
-                  fill
-                  className="object-contain drop-shadow-[0_0_15px_rgba(201,162,39,0.4)]"
-                />
-              </div>
-            </motion.a>
-
-            {/* Catalog hexagon button - right side */}
-            <motion.a
-              href="#products"
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.9, duration: 0.6 }}
-              whileHover={{ scale: 1.08 }}
-              className="absolute top-95/180 cursor-pointer"
-              style={{ 
-                right: '7.4%',
-                transform: 'translateY(-50%)',
-                width: 'clamp(50px, 10vw, 120px)',
-                aspectRatio: '1 / 1.167'
-              }}
-            >
-              <div className="relative w-full h-full">
-                <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/button%20%281%29-fnXCpcKzCPqf67wkc7OTJyH2dGRDeB.png"
-                  alt="Catalog"
-                  fill
-                  className="object-contain drop-shadow-[0_0_15px_rgba(201,162,39,0.4)]"
-                />
-              </div>
-            </motion.a>
           </motion.div>
 
           {/* Scroll Indicator - circular with arrow */}
