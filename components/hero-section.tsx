@@ -63,10 +63,10 @@ export default function HeroSection() {
               className="relative w-full h-[400px] sm:h-[500px] md:h-[550px]"
             >
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/honey-ncUtv5iLKtDOCOj1oimxD6Rdvrp2wH.jpg"
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/honey-UGkPqvXDJAWygXK4EXB2gg1udH5ibW.png"
                 alt="Golden honeycomb goblet with dripping honey and bees"
                 fill
-                className="object-contain mix-blend-multiply"
+                className="object-contain"
                 priority
               />
             </motion.div>
