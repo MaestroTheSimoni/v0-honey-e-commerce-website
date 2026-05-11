@@ -89,11 +89,11 @@ export default function HeroSection() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.9, duration: 0.6 }}
               whileHover={{ scale: 1.08 }}
-              className="absolute top-1/2 cursor-pointer"
+              className="absolute top-95/180 cursor-pointer"
               style={{ 
-                right: '15%',
+                right: '7.4%',
                 transform: 'translateY(-50%)',
-                width: 'clamp(100px, 15vw, 180px)',
+                width: 'clamp(50px, 10vw, 120px)',
                 aspectRatio: '1 / 1.167'
               }}
             >
