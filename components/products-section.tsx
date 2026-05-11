@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
+import Image from 'next/image'
 
 const products = [
   { name: 'BEESWAX', icon: '🐝' },
@@ -65,7 +66,7 @@ export default function ProductsSection() {
           ))}
         </div>
 
-        {/* Featured Product Card */}
+        {/* Featured Product Card with actual honey jar image */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -73,13 +74,17 @@ export default function ProductsSection() {
           className="mt-16 flex justify-center"
         >
           <div className="relative bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] border border-[#c9a227]/20 p-6 max-w-xs">
-            <div className="absolute top-4 left-4">
+            <div className="absolute top-4 left-4 z-10">
               <span className="text-xs text-[#c9a227] tracking-widest">BEESWAX</span>
             </div>
-            <div className="h-32 flex items-center justify-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-[#c9a227]/20 to-[#9a7b1c]/10 rounded-full flex items-center justify-center">
-                <span className="text-3xl">🍯</span>
-              </div>
+            <div className="h-40 flex items-center justify-center relative">
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pic-jar-OEFjjrehSd3m4Su81yIyoywuGk5j4X.png"
+                alt="Premium Honey Jar"
+                width={120}
+                height={160}
+                className="object-contain"
+              />
             </div>
             <div className="text-center mt-4">
               <p className="text-sm text-[#f5f0e6]/70">Premium Quality</p>

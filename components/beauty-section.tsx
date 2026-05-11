@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
+import Image from 'next/image'
 
 export default function BeautySection() {
   const ref = useRef(null)
@@ -51,7 +52,7 @@ export default function BeautySection() {
             </motion.button>
           </motion.div>
 
-          {/* Hexagonal Image */}
+          {/* Hexagonal Image with skincare product */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -59,18 +60,17 @@ export default function BeautySection() {
             className="flex justify-center lg:justify-end"
           >
             <div 
-              className="relative w-64 h-72 md:w-80 md:h-88 overflow-hidden group"
+              className="relative w-64 h-72 md:w-80 md:h-[360px] overflow-hidden group"
               style={{ clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)' }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-amber-500/30 to-amber-900/50" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <span className="text-6xl">✨</span>
-                  <p className="text-[#c9a227] mt-4 text-sm">Natural Beauty</p>
-                </div>
-              </div>
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/skincare-kMh7CGVbrPSaJ7oY8kqXoSyuBrqPU0.png"
+                alt="Honey skincare product"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+              />
               <div 
-                className="absolute inset-0 border-2 border-[#c9a227]/40 group-hover:border-[#c9a227] transition-colors duration-300" 
+                className="absolute inset-0 border-2 border-[#c9a227]/40 group-hover:border-[#c9a227] transition-colors duration-300 pointer-events-none" 
                 style={{ clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)' }} 
               />
             </div>
