@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, ShoppingCart } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 
 const navLinks = [
   { name: 'Home', href: '#home' },
@@ -34,7 +34,7 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled 
-            ? 'bg-[#0a0a0a]/90 backdrop-blur-md border-b border-[#c9a227]/20' 
+            ? 'bg-[#0a0a0a]/90 backdrop-blur-md' 
             : 'bg-transparent'
         }`}
       >
@@ -51,50 +51,68 @@ export default function Navbar() {
               />
             </Link>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-8">
-              {navLinks.map((link, index) => (
-                <motion.div
-                  key={link.name}
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
-                >
-                  <Link
-                    href={link.href}
-                    className="text-[#f5f0e6]/80 hover:text-[#c9a227] transition-colors duration-300 text-sm tracking-wide"
+            {/* Desktop Navigation - Pill shaped container */}
+            <div className="hidden md:flex items-center">
+              <div className="flex items-center gap-1 px-2 py-2 border border-[#c9a227]/30 rounded-full bg-[#0a0a0a]/50">
+                {navLinks.map((link, index) => (
+                  <motion.div
+                    key={link.name}
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1, duration: 0.5 }}
                   >
-                    {link.name}
-                  </Link>
-                </motion.div>
-              ))}
+                    <Link
+                      href={link.href}
+                      className="px-4 py-1.5 text-[#c9a227] hover:text-[#e8c547] transition-colors duration-300 text-sm tracking-wide"
+                    >
+                      {link.name}
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
             </div>
 
-            {/* Right Side Actions */}
-            <div className="hidden md:flex items-center gap-4">
+            {/* Right Side Actions - Hexagonal buttons */}
+            <div className="hidden md:flex items-center gap-3">
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
-                className="flex items-center gap-4"
+                className="flex items-center gap-3"
               >
                 <Link
                   href="#signin"
-                  className="relative px-6 py-2 text-[#c9a227] border border-[#c9a227]/50 text-sm tracking-wide hover:border-[#c9a227] transition-all duration-300"
-                  style={{
-                    clipPath: 'polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%)'
-                  }}
+                  className="relative group"
                 >
-                  Sign In
+                  <svg width="100" height="40" viewBox="0 0 100 40" className="absolute inset-0">
+                    <polygon 
+                      points="12,0 88,0 100,20 88,40 12,40 0,20" 
+                      fill="transparent" 
+                      stroke="#c9a227" 
+                      strokeWidth="1"
+                      className="group-hover:stroke-[#e8c547] transition-colors duration-300"
+                    />
+                  </svg>
+                  <span className="relative z-10 block px-6 py-2.5 text-[#c9a227] group-hover:text-[#e8c547] text-sm tracking-wide transition-colors duration-300">
+                    Sign In
+                  </span>
                 </Link>
                 <Link
                   href="#signup"
-                  className="relative px-6 py-2 bg-[#c9a227] text-[#0a0a0a] text-sm tracking-wide font-medium hover:bg-[#e8c547] transition-all duration-300"
-                  style={{
-                    clipPath: 'polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%)'
-                  }}
+                  className="relative group"
                 >
-                  Sign Up
+                  <svg width="100" height="40" viewBox="0 0 100 40" className="absolute inset-0">
+                    <polygon 
+                      points="12,0 88,0 100,20 88,40 12,40 0,20" 
+                      fill="transparent" 
+                      stroke="#c9a227" 
+                      strokeWidth="1"
+                      className="group-hover:fill-[#c9a227]/10 transition-colors duration-300"
+                    />
+                  </svg>
+                  <span className="relative z-10 block px-6 py-2.5 text-[#c9a227] text-sm tracking-wide">
+                    Sign Up
+                  </span>
                 </Link>
               </motion.div>
             </div>
