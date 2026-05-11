@@ -64,27 +64,15 @@ export default function HeroSection() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.8, duration: 0.6 }}
               whileHover={{ scale: 1.08 }}
-              className="absolute top-1/3 -left-4 sm:left-4 cursor-pointer group"
+              className="absolute top-1/3 -left-4 sm:left-4 cursor-pointer"
             >
-              <div className="relative">
-                <svg width="90" height="104" viewBox="0 0 90 104" className="sm:w-[110px] sm:h-[127px] drop-shadow-[0_0_15px_rgba(201,162,39,0.3)]">
-                  <defs>
-                    <linearGradient id="hexGradientShop" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#c9a227" stopOpacity="0.9" />
-                      <stop offset="50%" stopColor="#8b6914" stopOpacity="0.8" />
-                      <stop offset="100%" stopColor="#c9a227" stopOpacity="0.9" />
-                    </linearGradient>
-                  </defs>
-                  <polygon 
-                    points="45,2 88,26 88,78 45,102 2,78 2,26" 
-                    fill="rgba(30, 25, 15, 0.85)" 
-                    stroke="url(#hexGradientShop)" 
-                    strokeWidth="2"
-                  />
-                </svg>
-                <span className="absolute inset-0 flex items-center justify-center text-[#c9a227] text-sm sm:text-base font-serif font-bold tracking-wide group-hover:text-[#e8c547] transition-colors duration-300">
-                  Shop
-                </span>
+              <div className="relative w-[80px] h-[90px] sm:w-[100px] sm:h-[110px]">
+                <Image
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/button-Gp27Y5MOESi8d11mR6lBqIu9KahNFz.png"
+                  alt="Shop"
+                  fill
+                  className="object-contain drop-shadow-[0_0_15px_rgba(201,162,39,0.4)]"
+                />
               </div>
             </motion.a>
 
@@ -95,27 +83,15 @@ export default function HeroSection() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.9, duration: 0.6 }}
               whileHover={{ scale: 1.08 }}
-              className="absolute top-1/4 -right-4 sm:right-4 cursor-pointer group"
+              className="absolute top-1/4 -right-4 sm:right-4 cursor-pointer"
             >
-              <div className="relative">
-                <svg width="90" height="104" viewBox="0 0 90 104" className="sm:w-[110px] sm:h-[127px] drop-shadow-[0_0_15px_rgba(201,162,39,0.3)]">
-                  <defs>
-                    <linearGradient id="hexGradientCatalog" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#c9a227" stopOpacity="0.9" />
-                      <stop offset="50%" stopColor="#8b6914" stopOpacity="0.8" />
-                      <stop offset="100%" stopColor="#c9a227" stopOpacity="0.9" />
-                    </linearGradient>
-                  </defs>
-                  <polygon 
-                    points="45,2 88,26 88,78 45,102 2,78 2,26" 
-                    fill="rgba(30, 25, 15, 0.85)" 
-                    stroke="url(#hexGradientCatalog)" 
-                    strokeWidth="2"
-                  />
-                </svg>
-                <span className="absolute inset-0 flex items-center justify-center text-[#c9a227] text-sm sm:text-base font-serif font-bold tracking-wide group-hover:text-[#e8c547] transition-colors duration-300">
-                  Catalog
-                </span>
+              <div className="relative w-[80px] h-[90px] sm:w-[100px] sm:h-[110px]">
+                <Image
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/button%20%281%29-fnXCpcKzCPqf67wkc7OTJyH2dGRDeB.png"
+                  alt="Catalog"
+                  fill
+                  className="object-contain drop-shadow-[0_0_15px_rgba(201,162,39,0.4)]"
+                />
               </div>
             </motion.a>
           </motion.div>
