@@ -64,7 +64,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.8, duration: 0.6 }}
               whileHover={{ scale: 1.08 }}
-              className="absolute top-1/3 -left-4 sm:left-4 cursor-pointer"
+              className="absolute bottom-32 left-1/4 -translate-x-1/2 cursor-pointer"
             >
               <div className="relative w-[80px] h-[90px] sm:w-[100px] sm:h-[110px]">
                 <Image
@@ -83,7 +83,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.9, duration: 0.6 }}
               whileHover={{ scale: 1.08 }}
-              className="absolute top-1/4 -right-4 sm:right-4 cursor-pointer"
+              className="absolute bottom-48 right-1/4 translate-x-1/2 cursor-pointer"
             >
               <div className="relative w-[80px] h-[90px] sm:w-[100px] sm:h-[110px]">
                 <Image
