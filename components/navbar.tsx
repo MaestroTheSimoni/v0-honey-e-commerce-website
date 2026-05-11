@@ -34,7 +34,7 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled 
-            ? 'bg-[#0a0a0a]/90 backdrop-blur-md' 
+            ? 'bg-[#0a0a0a]/90 backdrop-blur-md border-b border-[#c9a227]/20' 
             : 'bg-transparent'
         }`}
       >
@@ -51,9 +51,13 @@ export default function Navbar() {
               />
             </Link>
 
-            {/* Desktop Navigation - Pill shaped container */}
+            {/* Desktop Navigation - Sharp edge hexagon container */}
             <div className="hidden md:flex items-center">
-              <div className="flex items-center gap-1 px-2 py-2 border border-[#c9a227]/30 rounded-full bg-[#0a0a0a]/50">
+              <div className="flex items-center gap-0 px-1 py-1 border border-[#c9a227]/50 bg-[#0a0a0a]/30 relative"
+                style={{
+                  clipPath: 'polygon(8% 0%, 92% 0%, 100% 50%, 92% 100%, 8% 100%, 0% 50%)'
+                }}
+              >
                 {navLinks.map((link, index) => (
                   <motion.div
                     key={link.name}
@@ -63,7 +67,7 @@ export default function Navbar() {
                   >
                     <Link
                       href={link.href}
-                      className="px-4 py-1.5 text-[#c9a227] hover:text-[#e8c547] transition-colors duration-300 text-sm tracking-wide"
+                      className="px-4 py-2 text-[#c9a227] hover:text-[#e8c547] hover:bg-[#c9a227]/10 transition-all duration-300 text-sm tracking-wide border-r border-[#c9a227]/20 last:border-r-0"
                     >
                       {link.name}
                     </Link>
@@ -72,45 +76,36 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* Right Side Actions - Hexagonal buttons */}
-            <div className="hidden md:flex items-center gap-3">
+            {/* Right Side Actions - Sharp hexagon buttons */}
+            <div className="hidden md:flex items-center gap-4">
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
-                className="flex items-center gap-3"
+                className="flex items-center gap-4"
               >
                 <Link
                   href="#signin"
-                  className="relative group"
+                  className="relative group overflow-hidden"
+                  style={{
+                    clipPath: 'polygon(12% 0%, 88% 0%, 100% 50%, 88% 100%, 12% 100%, 0% 50%)'
+                  }}
                 >
-                  <svg width="100" height="40" viewBox="0 0 100 40" className="absolute inset-0">
-                    <polygon 
-                      points="12,0 88,0 100,20 88,40 12,40 0,20" 
-                      fill="transparent" 
-                      stroke="#c9a227" 
-                      strokeWidth="1"
-                      className="group-hover:stroke-[#e8c547] transition-colors duration-300"
-                    />
-                  </svg>
-                  <span className="relative z-10 block px-6 py-2.5 text-[#c9a227] group-hover:text-[#e8c547] text-sm tracking-wide transition-colors duration-300">
+                  <div className="absolute inset-0 border border-[#c9a227]/60 group-hover:border-[#e8c547] transition-colors duration-300"></div>
+                  <span className="relative z-10 block px-6 py-2 text-[#c9a227] group-hover:text-[#e8c547] text-sm tracking-wide transition-colors duration-300">
                     Sign In
                   </span>
                 </Link>
                 <Link
                   href="#signup"
-                  className="relative group"
+                  className="relative group overflow-hidden"
+                  style={{
+                    clipPath: 'polygon(12% 0%, 88% 0%, 100% 50%, 88% 100%, 12% 100%, 0% 50%)'
+                  }}
                 >
-                  <svg width="100" height="40" viewBox="0 0 100 40" className="absolute inset-0">
-                    <polygon 
-                      points="12,0 88,0 100,20 88,40 12,40 0,20" 
-                      fill="transparent" 
-                      stroke="#c9a227" 
-                      strokeWidth="1"
-                      className="group-hover:fill-[#c9a227]/10 transition-colors duration-300"
-                    />
-                  </svg>
-                  <span className="relative z-10 block px-6 py-2.5 text-[#c9a227] text-sm tracking-wide">
+                  <div className="absolute inset-0 bg-[#c9a227]/20 group-hover:bg-[#c9a227]/30 transition-colors duration-300"></div>
+                  <div className="absolute inset-0 border border-[#c9a227]/60 group-hover:border-[#e8c547] transition-colors duration-300"></div>
+                  <span className="relative z-10 block px-6 py-2 text-[#c9a227] group-hover:text-[#e8c547] text-sm tracking-wide transition-colors duration-300">
                     Sign Up
                   </span>
                 </Link>
@@ -120,7 +115,7 @@ export default function Navbar() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 text-[#f5f0e6]"
+              className="md:hidden p-2 text-[#c9a227]"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -149,7 +144,7 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="text-2xl text-[#f5f0e6] hover:text-[#c9a227] transition-colors"
+                    className="text-2xl text-[#c9a227] hover:text-[#e8c547] transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -163,13 +158,13 @@ export default function Navbar() {
               >
                 <Link
                   href="#signin"
-                  className="px-8 py-3 text-[#c9a227] border border-[#c9a227] text-center"
+                  className="px-8 py-3 text-[#c9a227] border border-[#c9a227]/60 text-center hover:bg-[#c9a227]/10 transition-colors"
                 >
                   Sign In
                 </Link>
                 <Link
                   href="#signup"
-                  className="px-8 py-3 bg-[#c9a227] text-[#0a0a0a] text-center"
+                  className="px-8 py-3 bg-[#c9a227]/20 border border-[#c9a227]/60 text-[#c9a227] text-center hover:bg-[#c9a227]/30 transition-colors"
                 >
                   Sign Up
                 </Link>

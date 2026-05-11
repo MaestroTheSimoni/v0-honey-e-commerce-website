@@ -54,52 +54,29 @@ export default function AboutSection() {
             </motion.button>
           </motion.div>
 
-          {/* Hexagonal Image Grid with actual honey images */}
+          {/* Honey Jar with Honeycomb Background */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="relative h-[400px] flex justify-center lg:justify-end"
           >
-            <div className="relative w-[350px] h-[400px]">
-              {/* Top hexagon - honey jar */}
-              <div 
-                className="absolute top-0 right-0 w-36 h-40 overflow-hidden" 
-                style={{ clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)' }}
-              >
-                <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/honey-jar-2naKDpnQ2zzTy7iIh25Mp0AiOdgfq4.png"
-                  alt="Artistic honey jar"
-                  fill
-                  className="object-cover"
-                />
-              </div>
+            <div className="relative w-full h-full max-w-[350px]">
+              {/* Honeycomb background */}
+              <Image
+                src="/Cover.png"
+                alt="Honeycomb background"
+                fill
+                className="object-contain"
+              />
               
-              {/* Middle hexagon - premium jar */}
-              <div 
-                className="absolute top-24 right-32 w-32 h-36 overflow-hidden" 
-                style={{ clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)' }}
-              >
-                <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pic-jar-OEFjjrehSd3m4Su81yIyoywuGk5j4X.png"
-                  alt="Premium Jarrah Honey"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              
-              {/* Bottom hexagon - goblet */}
-              <div 
-                className="absolute bottom-0 right-12 w-40 h-44 overflow-hidden" 
-                style={{ clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)' }}
-              >
-                <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/honey-ncUtv5iLKtDOCOj1oimxD6Rdvrp2wH.jpg"
-                  alt="Golden honeycomb goblet"
-                  fill
-                  className="object-cover"
-                />
-              </div>
+              {/* Honey jar overlay */}
+              <Image
+                src="/honeyjar-about.png"
+                alt="Golden honey jar with bee"
+                fill
+                className="object-contain"
+              />
             </div>
           </motion.div>
         </div>
