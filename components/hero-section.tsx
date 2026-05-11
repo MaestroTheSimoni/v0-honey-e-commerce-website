@@ -7,34 +7,16 @@ import Image from 'next/image'
 export default function HeroSection() {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a0a0a]">
-      {/* Large honeycomb pattern background */}
+      {/* Honeycomb background image */}
       <div className="absolute inset-0">
-        <svg 
-          className="w-full h-full opacity-20" 
-          viewBox="0 0 1200 800" 
-          preserveAspectRatio="xMidYMid slice"
-        >
-          <defs>
-            <pattern id="honeycomb" x="0" y="0" width="112" height="194" patternUnits="userSpaceOnUse">
-              <g fill="none" stroke="#c9a227" strokeWidth="1">
-                <polygon points="56,0 112,28 112,84 56,112 0,84 0,28" transform="translate(0,0)" />
-                <polygon points="56,0 112,28 112,84 56,112 0,84 0,28" transform="translate(56,82)" />
-              </g>
-            </pattern>
-            <radialGradient id="fade" cx="50%" cy="50%" r="70%">
-              <stop offset="0%" stopColor="white" stopOpacity="1" />
-              <stop offset="100%" stopColor="white" stopOpacity="0" />
-            </radialGradient>
-            <mask id="fadeMask">
-              <rect width="100%" height="100%" fill="url(#fade)" />
-            </mask>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#honeycomb)" mask="url(#fadeMask)" />
-        </svg>
+        <Image
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Bg-Pic-pHwvNnfOyrpzbw4vjMlsqvocDJEb73.png"
+          alt=""
+          fill
+          className="object-cover"
+          priority
+        />
       </div>
-      
-      {/* Gradient overlay for depth */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0a0a0a]/50 to-[#0a0a0a]" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
         <div className="text-center">
