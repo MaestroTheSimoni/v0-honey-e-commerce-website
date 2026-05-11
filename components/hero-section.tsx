@@ -64,9 +64,15 @@ export default function HeroSection() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.8, duration: 0.6 }}
               whileHover={{ scale: 1.08 }}
-              className="absolute top-[45%] left-[18%] -translate-x-1/2 -translate-y-1/2 cursor-pointer"
+              className="absolute top-9/41 cursor-pointer"
+              style={{ 
+                left: '6.5%',
+                transform: 'translate(-50%, -50%)',
+                width: 'clamp(50px, 10vw, 120px)',
+                aspectRatio: '1 / 1.167'
+              }}
             >
-              <div className="relative w-[120px] h-[140px] sm:w-[140px] sm:h-[160px] md:w-[160px] md:h-[180px]">
+              <div className="relative w-full h-full">
                 <Image
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/button-Gp27Y5MOESi8d11mR6lBqIu9KahNFz.png"
                   alt="Shop"
@@ -83,9 +89,15 @@ export default function HeroSection() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.9, duration: 0.6 }}
               whileHover={{ scale: 1.08 }}
-              className="absolute top-[45%] right-[18%] translate-x-1/2 -translate-y-1/2 cursor-pointer"
+              className="absolute top-1/2 cursor-pointer"
+              style={{ 
+                right: '15%',
+                transform: 'translateY(-50%)',
+                width: 'clamp(100px, 15vw, 180px)',
+                aspectRatio: '1 / 1.167'
+              }}
             >
-              <div className="relative w-[120px] h-[140px] sm:w-[140px] sm:h-[160px] md:w-[160px] md:h-[180px]">
+              <div className="relative w-full h-full">
                 <Image
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/button%20%281%29-fnXCpcKzCPqf67wkc7OTJyH2dGRDeB.png"
                   alt="Catalog"
