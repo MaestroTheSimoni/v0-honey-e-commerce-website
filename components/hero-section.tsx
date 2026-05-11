@@ -66,7 +66,7 @@ export default function HeroSection() {
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/honey-ncUtv5iLKtDOCOj1oimxD6Rdvrp2wH.jpg"
                 alt="Golden honeycomb goblet with dripping honey and bees"
                 fill
-                className="object-contain"
+                className="object-contain mix-blend-multiply"
                 priority
               />
             </motion.div>
