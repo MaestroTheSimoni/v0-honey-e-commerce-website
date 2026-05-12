@@ -108,10 +108,11 @@ export default function GallerySection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="flex items-center gap-3 mb-12">
-          <h2 className="text-3xl md:text-4xl font-serif text-[#f5f0e6]">Gallery</h2>
+
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
             <polygon points="12,2 22,8.5 22,15.5 12,22 2,15.5 2,8.5" stroke="#c9a227" strokeWidth="1.5" fill="none" />
           </svg>
+          <h2 className="text-3xl md:text-4xl font-serif text-[#f5f0e6]">Gallery</h2>
         </div>
 
         {/* Hexagonal Gallery Grid - Mobile: 2x3, Desktop: 2x2 center with side hexagons */}
@@ -168,8 +169,8 @@ export default function GallerySection() {
                 key={index}
                 onClick={() => setCurrentPage(index)}
                 className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${index === currentPage
-                    ? "bg-[#c9a227] w-6"
-                    : "bg-[#c9a227]/30 hover:bg-[#c9a227]/50"
+                  ? "bg-[#c9a227] w-6"
+                  : "bg-[#c9a227]/30 hover:bg-[#c9a227]/50"
                   }`}
                 aria-label={`Go to page ${index + 1}`}
               />
