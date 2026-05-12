@@ -175,7 +175,7 @@ export default function Footer() {
       {/* Mobile Honey Jar - shown only on smaller screens */}
       <div className="lg:hidden flex justify-center mt-8">
         <Image
-          src="/images/footerpic.png"
+          src="/footerpic.png"
           alt="Honey Jar"
           width={200}
           height={280}
