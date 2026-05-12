@@ -11,16 +11,6 @@ export default function BeautySection() {
 
   return (
     <section ref={ref} className="py-24 bg-[#0a0a0a] relative">
-      {/* Decorative element */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={isInView ? { opacity: 0.5 } : {}}
-        className="absolute left-8 top-24"
-      >
-        <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
-          <polygon points="15,2 28,9 28,21 15,28 2,21 2,9" stroke="#c9a227" strokeWidth="1" fill="none" />
-        </svg>
-      </motion.div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -59,7 +49,7 @@ export default function BeautySection() {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="flex justify-center lg:justify-end"
           >
-            <div 
+            <div
               className="relative w-64 h-72 md:w-80 md:h-[360px] overflow-hidden group"
               style={{ clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)' }}
             >
@@ -69,9 +59,9 @@ export default function BeautySection() {
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <div 
-                className="absolute inset-0 border-2 border-[#c9a227]/40 group-hover:border-[#c9a227] transition-colors duration-300 pointer-events-none" 
-                style={{ clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)' }} 
+              <div
+                className="absolute inset-0 border-2 border-[#c9a227]/40 group-hover:border-[#c9a227] transition-colors duration-300 pointer-events-none"
+                style={{ clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)' }}
               />
             </div>
           </motion.div>

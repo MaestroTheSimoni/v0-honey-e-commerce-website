@@ -11,18 +11,6 @@ export default function AboutSection() {
 
   return (
     <section id="about" ref={ref} className="py-24 bg-[#0a0a0a] relative">
-      {/* Decorative bee icon */}
-      <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        animate={isInView ? { opacity: 1, x: 0 } : {}}
-        transition={{ duration: 0.6 }}
-        className="absolute left-8 top-24"
-      >
-        <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
-          <path d="M15 5L25 15L15 25L5 15L15 5Z" stroke="#c9a227" strokeWidth="1" fill="none" />
-          <circle cx="15" cy="15" r="3" fill="#c9a227" />
-        </svg>
-      </motion.div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -69,7 +57,7 @@ export default function AboutSection() {
                 fill
                 className="object-contain"
               />
-              
+
               {/* Honey jar overlay */}
               <Image
                 src="/honeyjar-about.png"

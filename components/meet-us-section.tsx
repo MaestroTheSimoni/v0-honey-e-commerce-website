@@ -12,16 +12,6 @@ export default function MeetUsSection() {
 
   return (
     <section ref={ref} className="py-24 bg-[#0a0a0a] relative">
-      {/* Decorative element */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={isInView ? { opacity: 0.5 } : {}}
-        className="absolute left-8 top-24"
-      >
-        <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
-          <polygon points="15,2 28,9 28,21 15,28 2,21 2,9" stroke="#c9a227" strokeWidth="1" fill="none" />
-        </svg>
-      </motion.div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -68,7 +58,7 @@ export default function MeetUsSection() {
             <div className="relative aspect-video bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] rounded-sm overflow-hidden border border-[#c9a227]/20">
               {/* Placeholder background */}
               <div className="absolute inset-0 bg-gradient-to-br from-amber-900/20 to-amber-700/10" />
-              
+
               {/* Play button */}
               <motion.button
                 whileHover={{ scale: 1.1 }}

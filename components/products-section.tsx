@@ -19,16 +19,6 @@ export default function ProductsSection() {
 
   return (
     <section id="products" ref={ref} className="py-24 bg-[#0a0a0a] relative">
-      {/* Decorative element */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={isInView ? { opacity: 0.5 } : {}}
-        className="absolute left-8 top-24"
-      >
-        <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
-          <polygon points="15,2 28,9 28,21 15,28 2,21 2,9" stroke="#c9a227" strokeWidth="1" fill="none" />
-        </svg>
-      </motion.div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -55,7 +45,7 @@ export default function ProductsSection() {
               className="relative group cursor-pointer"
             >
               {/* Hexagon shape */}
-              <div 
+              <div
                 className="w-24 h-28 md:w-28 md:h-32 flex flex-col items-center justify-center bg-[#1a1a1a] border border-[#c9a227]/30 group-hover:border-[#c9a227] transition-all duration-300"
                 style={{ clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)' }}
               >
