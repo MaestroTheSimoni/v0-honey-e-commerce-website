@@ -167,8 +167,8 @@ function SizeButton({
     <button
       onClick={onClick}
       className={`flex flex-col items-center gap-1 px-3 py-2 rounded border transition-all duration-300 ${active
-          ? 'border-[#c9a227] bg-[#c9a227]/10 text-[#c9a227]'
-          : 'border-[#c9a227]/20 text-[#f5f0e6]/40 hover:border-[#c9a227]/50 hover:text-[#f5f0e6]/70'
+        ? 'border-[#c9a227] bg-[#c9a227]/10 text-[#c9a227]'
+        : 'border-[#c9a227]/20 text-[#f5f0e6]/40 hover:border-[#c9a227]/50 hover:text-[#f5f0e6]/70'
         }`}
     >
       {isImageUrl ? (
@@ -239,22 +239,6 @@ export default function ShopSection() {
           transition={{ duration: 0.6 }}
           className="flex items-center gap-4 mb-14"
         >
-          {/* Bee icon */}
-          <div className="w-12 h-12 flex items-center justify-center">
-            <svg viewBox="0 0 40 40" width="40" height="40" fill="none">
-              <ellipse cx="20" cy="22" rx="9" ry="12" fill="#c9a227" opacity="0.9" />
-              <ellipse cx="20" cy="14" rx="6" ry="7" fill="#c9a227" />
-              <ellipse cx="13" cy="18" rx="7" ry="4" fill="#f5f0e6" opacity="0.7" transform="rotate(-20 13 18)" />
-              <ellipse cx="27" cy="18" rx="7" ry="4" fill="#f5f0e6" opacity="0.7" transform="rotate(20 27 18)" />
-              <line x1="17" y1="12" x2="15" y2="7" stroke="#c9a227" strokeWidth="1.2" />
-              <line x1="23" y1="12" x2="25" y2="7" stroke="#c9a227" strokeWidth="1.2" />
-              <circle cx="15" cy="7" r="1.5" fill="#c9a227" />
-              <circle cx="25" cy="7" r="1.5" fill="#c9a227" />
-              <line x1="14" y1="20" x2="26" y2="20" stroke="#0a0a0a" strokeWidth="1.2" opacity="0.5" />
-              <line x1="15" y1="25" x2="25" y2="25" stroke="#0a0a0a" strokeWidth="1.2" opacity="0.5" />
-            </svg>
-          </div>
-
           <div>
             <h2 className="text-4xl md:text-5xl font-serif text-[#f5f0e6] tracking-wide">Shop</h2>
             <div className="h-px w-64 bg-gradient-to-r from-[#c9a227] to-transparent mt-2" />
@@ -480,8 +464,8 @@ export default function ShopSection() {
               key={p.id}
               onClick={() => setCurrent(i)}
               className={`flex items-center gap-3 p-3 border rounded-sm text-left transition-all duration-300 ${i === current
-                  ? 'border-[#c9a227]/50 bg-[#c9a227]/5'
-                  : 'border-[#c9a227]/10 bg-[#111111] hover:border-[#c9a227]/30'
+                ? 'border-[#c9a227]/50 bg-[#c9a227]/5'
+                : 'border-[#c9a227]/10 bg-[#111111] hover:border-[#c9a227]/30'
                 }`}
             >
               <div className="w-10 h-10 relative flex-shrink-0">
