@@ -13,13 +13,11 @@ interface ShopItem {
   healthBenefits: string
   color: string
   region: string
-  price: number
-  priceDisplay: string
-  sizes: { label: string; icon: string }[]
+  sizes: { label: string; icon: string; price: number; priceDisplay: string }[]
   weight: string
   image: string
-  stripeProductId: string   // Stripe product ID – fill in from dashboard
-  stripePriceId: string     // Stripe price ID  – fill in from dashboard
+  stripeProductId: string
+  stripePriceId: string
   badge?: string
 }
 
@@ -34,12 +32,10 @@ const shopItems: ShopItem[] = [
       'Fireweed Honey Is Rich In Antioxidants, Vitamins, And Minerals. It Has Antibacterial And Anti-Inflammatory Properties, Making It A Natural Remedy For Sore Throats, Coughs, And Colds.',
     color: 'Amber',
     region: 'Forest Areas Of India',
-    price: 200,
-    priceDisplay: '$200',
     sizes: [
-      { label: '250ml', icon: '🍯' },
-      { label: '500ml', icon: '🫙' },
-      { label: '1L', icon: '🪣' },
+      { label: '250ml', icon: '/small-jar (1).png', price: 120, priceDisplay: '$120' },
+      { label: '500ml', icon: '/middle-jar.png', price: 200, priceDisplay: '$200' },
+      { label: '1L', icon: '/big-jar.png', price: 350, priceDisplay: '$350' },
     ],
     weight: '500ml - Bottle',
     image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pic-jar-OEFjjrehSd3m4Su81yIyoywuGk5j4X.png',
@@ -56,12 +52,10 @@ const shopItems: ShopItem[] = [
       'Celebrated For Its Exceptional UMF Rating, Manuka Supports Gut Health, Wound Healing, And Immune Defense. One Of Nature\'s Most Potent Superfoods.',
     color: 'Dark Amber',
     region: 'New Zealand',
-    price: 350,
-    priceDisplay: '$350',
     sizes: [
-      { label: '250ml', icon: '🍯' },
-      { label: '500ml', icon: '🫙' },
-      { label: '1L', icon: '🪣' },
+      { label: '250ml', icon: '/small-jar (1).png', price: 180, priceDisplay: '$180' },
+      { label: '500ml', icon: '/middle-jar.png', price: 350, priceDisplay: '$350' },
+      { label: '1L', icon: '/big-jar.png', price: 620, priceDisplay: '$620' },
     ],
     weight: '500ml - Bottle',
     image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/honey-jar-2naKDpnQ2zzTy7iIh25Mp0AiOdgfq4.png',
@@ -78,12 +72,10 @@ const shopItems: ShopItem[] = [
       'High In Fructose, Acacia Honey Stays Liquid Longer And Is Gentle On Blood Sugar. Excellent For Digestion And As A Natural Energy Booster.',
     color: 'Pale Gold',
     region: 'Romanian Carpathians',
-    price: 280,
-    priceDisplay: '$280',
     sizes: [
-      { label: '250ml', icon: '🍯' },
-      { label: '500ml', icon: '🫙' },
-      { label: '1L', icon: '🪣' },
+      { label: '250ml', icon: '/small-jar (1).png', price: 150, priceDisplay: '$150' },
+      { label: '500ml', icon: '/middle-jar.png', price: 280, priceDisplay: '$280' },
+      { label: '1L', icon: '/big-jar.png', price: 500, priceDisplay: '$500' },
     ],
     weight: '500ml - Bottle',
     image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pic-jar-OEFjjrehSd3m4Su81yIyoywuGk5j4X.png',
@@ -99,12 +91,10 @@ const shopItems: ShopItem[] = [
       'Rich In Oligosaccharides And Minerals, Forest Honey Supports Gut Flora And Provides Sustained Energy. A Powerhouse Of Trace Elements.',
     color: 'Deep Mahogany',
     region: 'Black Forest, Germany',
-    price: 320,
-    priceDisplay: '$320',
     sizes: [
-      { label: '250ml', icon: '🍯' },
-      { label: '500ml', icon: '🫙' },
-      { label: '1L', icon: '🪣' },
+      { label: '250ml', icon: '/small-jar (1).png', price: 170, priceDisplay: '$170' },
+      { label: '500ml', icon: '/middle-jar.png', price: 320, priceDisplay: '$320' },
+      { label: '1L', icon: '/big-jar.png', price: 580, priceDisplay: '$580' },
     ],
     weight: '500ml - Bottle',
     image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/honey-jar-2naKDpnQ2zzTy7iIh25Mp0AiOdgfq4.png',
@@ -167,10 +157,12 @@ function SizeButton({
   active,
   onClick,
 }: {
-  size: { label: string; icon: string }
+  size: { label: string; icon: string; price: number; priceDisplay: string }
   active: boolean
   onClick: () => void
 }) {
+  const isImageUrl = size.icon.startsWith('/')
+
   return (
     <button
       onClick={onClick}
@@ -179,7 +171,13 @@ function SizeButton({
           : 'border-[#c9a227]/20 text-[#f5f0e6]/40 hover:border-[#c9a227]/50 hover:text-[#f5f0e6]/70'
         }`}
     >
-      <span className="text-xl">{size.icon}</span>
+      {isImageUrl ? (
+        <div className="relative w-5 h-5">
+          <Image src={size.icon} alt={size.label} fill className="object-contain" />
+        </div>
+      ) : (
+        <span className="text-xl">{size.icon}</span>
+      )}
       <span className="text-[10px] tracking-wider">{size.label}</span>
     </button>
   )
@@ -270,21 +268,6 @@ export default function ShopSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative"
         >
-          <div
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-[40%] w-[340px] h-[400px]
-              bg-[#111111] border border-[#c9a227]/10 rounded-sm opacity-30 pointer-events-none hidden lg:block overflow-hidden"
-          >
-            <div className="w-full h-full flex items-center justify-center p-6">
-              <Image
-                src={shopItems[(current + 1) % total].image}
-                alt="next"
-                width={200}
-                height={200}
-                className="object-contain opacity-50 scale-90"
-              />
-            </div>
-          </div>
-
           {/* Main card */}
           <div className="bg-[#111111] border border-[#c9a227]/20 rounded-sm overflow-hidden relative z-10">
 
@@ -426,9 +409,16 @@ export default function ShopSection() {
                   <div className="flex items-center justify-between pt-2">
                     <div>
                       <span className="text-xs text-[#c9a227]/60 tracking-widest uppercase block">Price :</span>
-                      <p className="text-[#c9a227] text-3xl font-medium tracking-tight mt-0.5">
-                        {item.priceDisplay}
-                      </p>
+                      <AnimatePresence mode="wait">
+                        <motion.p
+                          key={item.sizes[selectedSize].priceDisplay}
+                          initial={{ opacity: 0, y: -6 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          className="text-[#c9a227] text-3xl font-medium tracking-tight mt-0.5"
+                        >
+                          {item.sizes[selectedSize].priceDisplay}
+                        </motion.p>
+                      </AnimatePresence>
                     </div>
 
                     <motion.button
@@ -501,7 +491,7 @@ export default function ShopSection() {
                 <p className={`text-xs font-medium truncate transition-colors ${i === current ? 'text-[#c9a227]' : 'text-[#f5f0e6]/60'}`}>
                   {p.name}
                 </p>
-                <p className="text-[10px] text-[#c9a227]/60 mt-0.5">{p.priceDisplay}</p>
+                <p className="text-[10px] text-[#c9a227]/60 mt-0.5">{p.sizes[0].priceDisplay}</p>
               </div>
             </button>
           ))}
