@@ -28,17 +28,17 @@ const galleryImages = [
   },
   {
     id: 4,
-    src: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=600&h=600&fit=crop",
+    src: "/piovan3.png",
     alt: "Sunflowers in golden light",
   },
   {
     id: 5,
-    src: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=600&h=600&fit=crop",
+    src: "/piovan2.png",
     alt: "Honey dripping from spoon",
   },
   {
     id: 6,
-    src: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=600&h=600&fit=crop",
+    src: "/piovan1.png",
     alt: "Fresh honeycomb close-up",
   },
   {
