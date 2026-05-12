@@ -29,7 +29,9 @@ export default function AboutSection() {
 
             <div className="space-y-4 text-[#f5f0e6]/70 leading-relaxed">
               <p>
-                At Golden Hive Honey, We Are Passionate About Providing Our Customers With The Finest Quality Honey Products Straight From Our Beekeeping Farms. Our Journey Began Years Ago When Our Founders, A Group...
+                Sin dall'apertura nel 2015, ci siamo impegnati per sensibilizzare quante più persone possibile circa l'importanza delle api nell'ecosistema e sui pericoli che corrono come specie.
+
+                Da Apicoltura Piovan Michele, imparerai tutto ciò che c'è da sapere sull'ecosistema delle api, sull'apicoltura e, ovviamente, potrai assaggiare ed acquistare il nostro miele di altissima qualità e i prodotti derivati.
               </p>
             </div>
 
