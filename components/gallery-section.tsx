@@ -28,17 +28,17 @@ const galleryImages = [
   },
   {
     id: 4,
-    src: "https://images.unsplash.com/photo-1607471926456-3dc98a0fb1b4?w=600&h=600&fit=crop",
+    src: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=600&h=600&fit=crop",
     alt: "Sunflowers in golden light",
   },
   {
     id: 5,
-    src: "https://images.unsplash.com/photo-1601063476271-2207a31bb5e3?w=600&h=600&fit=crop",
+    src: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=600&h=600&fit=crop",
     alt: "Honey dripping from spoon",
   },
   {
     id: 6,
-    src: "https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?w=600&h=600&fit=crop",
+    src: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=600&h=600&fit=crop",
     alt: "Fresh honeycomb close-up",
   },
   {
