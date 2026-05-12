@@ -105,14 +105,6 @@ const shopItems: ShopItem[] = [
 ]
 
 // ─── STRIPE CHECKOUT HELPER ───────────────────────────────────────────────────
-/**
- * Call your API route /api/checkout which creates a Stripe Checkout Session.
- * The API route (pages/api/checkout.ts or app/api/checkout/route.ts) should:
- *   1. Import stripe from 'stripe'
- *   2. Create session: stripe.checkout.sessions.create({ line_items, mode:'payment', ... })
- *   3. Return { url: session.url }
- * Then redirect the browser to that URL.
- */
 async function handleStripeCheckout(item: ShopItem, selectedSize: string) {
   try {
     const res = await fetch('/api/checkout', {
@@ -232,15 +224,13 @@ export default function ShopSection() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
 
-        {/* ── Section Header ── */}
-        {/* ── Section Header ── */}
+        
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="flex items-center gap-4 mb-14"
         >
-          {/* 1. Added the Polygon SVG here (on the left of the text) */}
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
             <polygon
               points="12,2 22,8.5 22,15.5 12,22 2,15.5 2,8.5"
@@ -252,7 +242,6 @@ export default function ShopSection() {
 
           <div>
             <h2 className="text-4xl md:text-5xl font-serif text-[#f5f0e6] tracking-wide">Shop</h2>
-            {/* 2. Removed the underline div to keep it identical to the Gallery style */}
           </div>
         </motion.div>
 
@@ -284,7 +273,8 @@ export default function ShopSection() {
             <div className="grid md:grid-cols-2 gap-0">
 
               {/* ── Left: Product Image ── */}
-              <div className="relative bg-gradient-to-br from-[#161616] to-[#0d0d0d] p-10 flex flex-col items-center justify-center min-h-[440px]">
+              {/* FIX: reduced min-h and padding on mobile */}
+              <div className="relative bg-gradient-to-br from-[#161616] to-[#0d0d0d] p-6 md:p-10 flex flex-col items-center justify-center min-h-[260px] md:min-h-[440px]">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={current}
@@ -292,7 +282,8 @@ export default function ShopSection() {
                     animate={{ opacity: 1, scale: 1, x: 0 }}
                     exit={{ opacity: 0, scale: 0.92, x: 20 }}
                     transition={{ duration: 0.4 }}
-                    className="relative w-full max-w-[280px] aspect-square"
+                    
+                    className="relative w-full max-w-[160px] md:max-w-[280px] aspect-square"
                   >
                     <Image
                       src={item.image}
@@ -304,7 +295,7 @@ export default function ShopSection() {
                 </AnimatePresence>
 
                 {/* Product name tag */}
-                <div className="mt-6 text-center">
+                <div className="mt-4 md:mt-6 text-center">
                   <AnimatePresence mode="wait">
                     <motion.p
                       key={item.name}
@@ -351,7 +342,8 @@ export default function ShopSection() {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -20 }}
                   transition={{ duration: 0.4 }}
-                  className="p-8 md:p-10 flex flex-col justify-center gap-5 border-l border-[#c9a227]/10"
+                 
+                  className="p-5 md:p-10 flex flex-col justify-center gap-3 md:gap-5 border-t md:border-t-0 md:border-l border-[#c9a227]/10"
                 >
 
                   {/* Flavor */}
