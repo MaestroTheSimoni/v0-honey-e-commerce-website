@@ -56,13 +56,13 @@ export default function HeroSection() {
         animate={beeControls}
         initial={{ opacity: 0 }}
         className="fixed z-50 pointer-events-none"
-        style={{ top: 20, left: 140, width: 52, height: 52 }}
+        style={{ top: 20, left: 100, width: 52, height: 52 }}
       >
         <Image
           src="/bee.png"
           alt="bee"
-          width={52}
-          height={52}
+          width={82}
+          height={82}
           className="object-contain drop-shadow-[0_0_6px_rgba(201,162,39,0.5)]"
         />
       </motion.div>
