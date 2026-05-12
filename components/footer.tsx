@@ -3,24 +3,21 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Facebook, Twitter, Instagram, Youtube } from 'lucide-react'
 
 const footerLinks = {
-  shop: [
+  about: [
     { name: 'Products', href: '#products' },
-    { name: 'Best Sellers', href: '#' },
-    { name: 'New Arrivals', href: '#' },
-    { name: 'FAQ', href: '#' },
+    { name: 'About Us', href: '#about' },
+    { name: 'FAQ', href: '#faq' },
   ],
   services: [
-    { name: 'Terms Of Services', href: '#' },
+    { name: 'Terms Of Service', href: '#' },
     { name: 'Privacy Policy', href: '#' },
-    { name: 'Returns', href: '#' },
+    { name: 'Store', href: '#' },
   ],
   help: [
-    { name: 'Help Center', href: '#' },
-    { name: 'Real Gifts', href: '#' },
-    { name: 'Brand', href: '#' },
+    { name: 'Return', href: '#' },
+    { name: 'Purches', href: '#' },
   ],
   contact: [
     { name: 'Email', href: 'mailto:info@goldenhivehoney.com' },
@@ -31,136 +28,150 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0a0a0a] border-t border-[#c9a227]/10 pt-16 pb-8">
+    <footer className="relative bg-[#0a0a0a] pt-16 pb-8 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Footer Links Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
-          {/* Shop */}
-          <div>
-            <h4 className="text-[#f5f0e6] font-medium mb-4 text-sm">Shop</h4>
-            <ul className="space-y-2">
-              {footerLinks.shop.map((link) => (
-                <li key={link.name}>
-                  <Link 
-                    href={link.href}
-                    className="text-[#f5f0e6]/50 hover:text-[#c9a227] text-sm transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+        <div className="flex flex-col lg:flex-row justify-between">
+          {/* Left Content - Links and Social */}
+          <div className="flex-1">
+            {/* Footer Links Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+              {/* About */}
+              <div>
+                <h4 className="text-[#f5f0e6] font-medium mb-4 text-sm">About</h4>
+                <ul className="space-y-2">
+                  {footerLinks.about.map((link) => (
+                    <li key={link.name}>
+                      <Link 
+                        href={link.href}
+                        className="text-[#f5f0e6]/50 hover:text-[#c9a227] text-sm transition-colors"
+                      >
+                        {link.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Services */}
+              <div>
+                <h4 className="text-[#f5f0e6] font-medium mb-4 text-sm">Services</h4>
+                <ul className="space-y-2">
+                  {footerLinks.services.map((link) => (
+                    <li key={link.name}>
+                      <Link 
+                        href={link.href}
+                        className="text-[#f5f0e6]/50 hover:text-[#c9a227] text-sm transition-colors"
+                      >
+                        {link.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Help Center */}
+              <div>
+                <h4 className="text-[#f5f0e6] font-medium mb-4 text-sm">Help Center</h4>
+                <ul className="space-y-2">
+                  {footerLinks.help.map((link) => (
+                    <li key={link.name}>
+                      <Link 
+                        href={link.href}
+                        className="text-[#f5f0e6]/50 hover:text-[#c9a227] text-sm transition-colors"
+                      >
+                        {link.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Contact Us */}
+              <div>
+                <h4 className="text-[#f5f0e6] font-medium mb-4 text-sm">Contact Us</h4>
+                <ul className="space-y-2">
+                  {footerLinks.contact.map((link) => (
+                    <li key={link.name}>
+                      <Link 
+                        href={link.href}
+                        className="text-[#f5f0e6]/50 hover:text-[#c9a227] text-sm transition-colors"
+                      >
+                        {link.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Social Media Icons - Hexagonal style */}
+            <div className="mb-8">
+              <Image
+                src="/socialmedia.png"
+                alt="Social Media"
+                width={153}
+                height={51}
+                className="opacity-80 hover:opacity-100 transition-opacity"
+              />
+            </div>
           </div>
 
-          {/* Services */}
-          <div>
-            <h4 className="text-[#f5f0e6] font-medium mb-4 text-sm">Services</h4>
-            <ul className="space-y-2">
-              {footerLinks.services.map((link) => (
-                <li key={link.name}>
-                  <Link 
-                    href={link.href}
-                    className="text-[#f5f0e6]/50 hover:text-[#c9a227] text-sm transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+          {/* Right Content - Honey Jar Image */}
+          <div className="hidden lg:block absolute right-0 bottom-0 lg:relative lg:right-auto lg:bottom-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <Image
+                src="/footerpic.png"
+                alt="Honey Jar"
+                width={300}
+                height={400}
+                className="object-contain"
+              />
+            </motion.div>
           </div>
-
-          {/* Help Center */}
-          <div>
-            <h4 className="text-[#f5f0e6] font-medium mb-4 text-sm">Help Center</h4>
-            <ul className="space-y-2">
-              {footerLinks.help.map((link) => (
-                <li key={link.name}>
-                  <Link 
-                    href={link.href}
-                    className="text-[#f5f0e6]/50 hover:text-[#c9a227] text-sm transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact Us */}
-          <div>
-            <h4 className="text-[#f5f0e6] font-medium mb-4 text-sm">Contact Us</h4>
-            <ul className="space-y-2">
-              {footerLinks.contact.map((link) => (
-                <li key={link.name}>
-                  <Link 
-                    href={link.href}
-                    className="text-[#f5f0e6]/50 hover:text-[#c9a227] text-sm transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        {/* Social Links */}
-        <div className="flex justify-center gap-4 mb-8">
-          <motion.a
-            whileHover={{ scale: 1.1, y: -2 }}
-            href="#"
-            className="w-10 h-10 flex items-center justify-center border border-[#c9a227]/30 text-[#f5f0e6]/60 hover:text-[#c9a227] hover:border-[#c9a227] transition-all"
-          >
-            <Facebook size={18} />
-          </motion.a>
-          <motion.a
-            whileHover={{ scale: 1.1, y: -2 }}
-            href="#"
-            className="w-10 h-10 flex items-center justify-center border border-[#c9a227]/30 text-[#f5f0e6]/60 hover:text-[#c9a227] hover:border-[#c9a227] transition-all"
-          >
-            <Twitter size={18} />
-          </motion.a>
-          <motion.a
-            whileHover={{ scale: 1.1, y: -2 }}
-            href="#"
-            className="w-10 h-10 flex items-center justify-center border border-[#c9a227]/30 text-[#f5f0e6]/60 hover:text-[#c9a227] hover:border-[#c9a227] transition-all"
-          >
-            <Instagram size={18} />
-          </motion.a>
-          <motion.a
-            whileHover={{ scale: 1.1, y: -2 }}
-            href="#"
-            className="w-10 h-10 flex items-center justify-center border border-[#c9a227]/30 text-[#f5f0e6]/60 hover:text-[#c9a227] hover:border-[#c9a227] transition-all"
-          >
-            <Youtube size={18} />
-          </motion.a>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-[#c9a227]/10 pt-8">
+        <div className="border-t border-[#c9a227]/10 pt-8 mt-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             {/* Logo */}
-            <div className="flex items-center gap-2">
-              <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-VT97wsB2zlCVbDIyJCWicTitsAcw81.png"
-                alt="Golden Hive Honey"
-                width={140}
-                height={30}
-                className="h-6 w-auto opacity-60"
-              />
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full border border-[#c9a227]/40 flex items-center justify-center">
+                <span className="text-[#c9a227] text-lg">🐝</span>
+              </div>
+              <span className="text-[#c9a227] font-semibold text-lg">Golden Hive Honey</span>
             </div>
 
             {/* Copyright */}
-            <p className="text-[#f5f0e6]/40 text-xs text-center">
-              Copyright © 2024 Golden Hive Honey. All Rights Reserved.
-            </p>
+            <div className="text-center">
+              <p className="text-[#f5f0e6]/60 text-sm">
+                Created By Elinaui9
+              </p>
+              <p className="text-[#f5f0e6]/40 text-xs">
+                Copyright © 2023 Golden Hive Honey. All Rights Reserved.
+              </p>
+            </div>
 
-            {/* Powered by */}
-            <p className="text-[#f5f0e6]/30 text-xs">
-              Made with 🍯
-            </p>
+            {/* Empty space for balance */}
+            <div className="hidden md:block w-[180px]"></div>
           </div>
         </div>
+      </div>
+
+      {/* Mobile Honey Jar - shown only on smaller screens */}
+      <div className="lg:hidden flex justify-center mt-8">
+        <Image
+          src="/footerpic.png"
+          alt="Honey Jar"
+          width={200}
+          height={280}
+          className="object-contain"
+        />
       </div>
     </footer>
   )
