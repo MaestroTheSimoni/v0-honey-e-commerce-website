@@ -159,10 +159,10 @@ export default function Footer() {
             {/* Copyright */}
             <div className="text-center">
               <p className="text-[#f5f0e6]/60 text-sm">
-                Created By Elinaui9
+                Created By Riccardo De Simoni
               </p>
               <p className="text-[#f5f0e6]/40 text-xs">
-                Copyright © 2023 Golden Hive Honey. All Rights Reserved.
+                Copyright © 2026 Riccardo De Simoni. All Rights Reserved.
               </p>
             </div>
 
