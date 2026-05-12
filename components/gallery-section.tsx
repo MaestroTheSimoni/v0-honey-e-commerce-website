@@ -18,12 +18,12 @@ const galleryImages = [
   },
   {
     id: 2,
-    src: "https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=600&h=600&fit=crop",
+    src: "/piovan5.png",
     alt: "Golden honey jar with dipper",
   },
   {
     id: 3,
-    src: "https://images.unsplash.com/photo-1471943311424-646960669fbc?w=600&h=600&fit=crop",
+    src: "/piovan4.png",
     alt: "Beekeeper working with hive",
   },
   {
