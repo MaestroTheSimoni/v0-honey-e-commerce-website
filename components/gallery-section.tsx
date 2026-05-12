@@ -111,15 +111,27 @@ export default function GallerySection() {
           <h2 className="text-3xl md:text-4xl font-serif text-[#f5f0e6]">Gallery</h2>
         </div>
 
-        {/* Hexagonal Gallery Grid - 2x2 center with side hexagons */}
-        <div className="relative flex items-center justify-center gap-6 md:gap-10 lg:gap-14">
+        {/* Hexagonal Gallery Grid - Mobile: 2x3, Desktop: 2x2 center with side hexagons */}
+        
+        {/* Mobile Layout - 2 columns, 3 rows */}
+        <div className="grid grid-cols-2 gap-6 md:hidden justify-items-center mx-auto w-fit">
+          {currentImages[0] && <HexagonImage key={currentImages[0].id} image={currentImages[0]} />}
+          {currentImages[1] && <HexagonImage key={currentImages[1].id} image={currentImages[1]} />}
+          {currentImages[2] && <HexagonImage key={currentImages[2].id} image={currentImages[2]} />}
+          {currentImages[3] && <HexagonImage key={currentImages[3].id} image={currentImages[3]} />}
+          {currentImages[4] && <HexagonImage key={currentImages[4].id} image={currentImages[4]} />}
+          {currentImages[5] && <HexagonImage key={currentImages[5].id} image={currentImages[5]} />}
+        </div>
+
+        {/* Desktop Layout - 2x2 center with side hexagons */}
+        <div className="hidden md:flex relative items-center justify-center gap-10 lg:gap-14">
           {/* Far Left - centered vertically */}
           <div className="flex items-center">
             {currentImages[4] && <HexagonImage key={currentImages[4].id} image={currentImages[4]} />}
           </div>
 
           {/* Center 2x2 Grid */}
-          <div className="grid grid-cols-2 gap-8 md:gap-12 lg:gap-16">
+          <div className="grid grid-cols-2 gap-12 lg:gap-16">
             {/* Top Left */}
             {currentImages[0] && <HexagonImage key={currentImages[0].id} image={currentImages[0]} />}
             {/* Top Right */}
