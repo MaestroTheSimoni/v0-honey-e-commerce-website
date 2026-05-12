@@ -9,9 +9,10 @@ import { Menu, X } from 'lucide-react'
 const navLinks = [
   { name: 'Home', href: '#home' },
   { name: 'About Us', href: '#about' },
-  { name: 'Products', href: '#products' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Shop', href: '#shop' },
+  //{ name: 'Products', href: '#products' },
   { name: 'Gallery', href: '#gallery' },
+  { name: 'Contact', href: '#contact' },
 ]
 
 export default function Navbar() {
@@ -55,7 +56,7 @@ export default function Navbar() {
             <div className="hidden md:flex items-center">
               <div className="flex items-center gap-0 px-1 py-1 border border-[#c9a227]/50 bg-[#0a0a0a]/30 relative"
                 style={{
-                  clipPath: 'polygon(8% 0%, 92% 0%, 100% 50%, 92% 100%, 8% 100%, 0% 50%)'
+                  clipPath: 'polygon(5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%)'
                 }}
               >
                 {navLinks.map((link, index) => (
@@ -88,9 +89,10 @@ export default function Navbar() {
                   href="#signin"
                   className="relative group overflow-hidden"
                   style={{
-                    clipPath: 'polygon(12% 0%, 88% 0%, 100% 50%, 88% 100%, 12% 100%, 0% 50%)'
+                    clipPath: 'polygon(8% 0%, 92% 0%, 100% 50%, 92% 100%, 8% 100%, 0% 50%)'
                   }}
                 >
+                  <div className="absolute inset-0 bg-[#c9a227]/20 group-hover:bg-[#c9a227]/30 transition-colors duration-300"></div>
                   <div className="absolute inset-0 border border-[#c9a227]/60 group-hover:border-[#e8c547] transition-colors duration-300"></div>
                   <span className="relative z-10 block px-6 py-2 text-[#c9a227] group-hover:text-[#e8c547] text-sm tracking-wide transition-colors duration-300">
                     Sign In

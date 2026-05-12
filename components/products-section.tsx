@@ -1,3 +1,4 @@
+/*
 "use client"
 
 import { motion } from 'framer-motion'
@@ -33,7 +34,7 @@ export default function ProductsSection() {
           <h2 className="text-3xl md:text-4xl font-serif text-[#f5f0e6]">Products</h2>
         </motion.div>
 
-        {/* Hexagonal Product Grid */}
+       
         <div className="flex flex-wrap justify-center gap-4 md:gap-6">
           {products.map((product, index) => (
             <motion.div
@@ -44,7 +45,7 @@ export default function ProductsSection() {
               whileHover={{ scale: 1.05, y: -5 }}
               className="relative group cursor-pointer"
             >
-              {/* Hexagon shape */}
+              
               <div
                 className="w-24 h-28 md:w-28 md:h-32 flex flex-col items-center justify-center bg-[#1a1a1a] border border-[#c9a227]/30 group-hover:border-[#c9a227] transition-all duration-300"
                 style={{ clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)' }}
@@ -56,7 +57,7 @@ export default function ProductsSection() {
           ))}
         </div>
 
-        {/* Featured Product Card with actual honey jar image */}
+        
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -85,4 +86,5 @@ export default function ProductsSection() {
       </div>
     </section>
   )
-}
+} */
+
