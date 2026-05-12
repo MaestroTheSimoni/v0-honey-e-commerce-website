@@ -127,24 +127,22 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Right Content - Honey Jar Image */}
-          <div className="hidden lg:block absolute right-0 bottom-0 lg:relative lg:right-auto lg:bottom-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="relative"
-            >
-              <Image
-                src="/footerpic.png"
-                alt="Honey Jar"
-                width={300}
-                height={400}
-                className="object-contain"
-              />
-            </motion.div>
-          </div>
+          {/* Right Content - Honey Jar Image - Positioned at top of footer */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="hidden lg:block absolute right-8 xl:right-24 -top-16"
+          >
+            <Image
+              src="/footerpic.png"
+              alt="Honey Jar"
+              width={300}
+              height={400}
+              className="object-contain"
+            />
+          </motion.div>
         </div>
 
         {/* Bottom Bar */}
@@ -177,7 +175,7 @@ export default function Footer() {
       {/* Mobile Honey Jar - shown only on smaller screens */}
       <div className="lg:hidden flex justify-center mt-8">
         <Image
-          src="/footerpic.png"
+          src="/images/footerpic.png"
           alt="Honey Jar"
           width={200}
           height={280}
