@@ -215,7 +215,7 @@ export default function ShopSection() {
     <section
       ref={ref}
       id="shop"
-      className="py-24 bg-[#0a0a0a] relative overflow-hidden"
+      className="py-12 md:py-24 bg-[#0a0a0a] relative overflow-hidden"
     >
       {/* Ambient glow */}
       <div className="absolute inset-0 pointer-events-none">
@@ -224,12 +224,12 @@ export default function ShopSection() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
 
-        
+        {/* ── Section Header ── */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="flex items-center gap-4 mb-14"
+          className="flex items-center gap-4 mb-6 md:mb-14"
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
             <polygon
@@ -274,7 +274,7 @@ export default function ShopSection() {
 
               {/* ── Left: Product Image ── */}
               {/* FIX: reduced min-h and padding on mobile */}
-              <div className="relative bg-gradient-to-br from-[#161616] to-[#0d0d0d] p-6 md:p-10 flex flex-col items-center justify-center min-h-[260px] md:min-h-[440px]">
+              <div className="relative bg-gradient-to-br from-[#161616] to-[#0d0d0d] p-4 md:p-10 flex flex-col items-center justify-center min-h-[200px] md:min-h-[440px]">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={current}
@@ -282,8 +282,7 @@ export default function ShopSection() {
                     animate={{ opacity: 1, scale: 1, x: 0 }}
                     exit={{ opacity: 0, scale: 0.92, x: 20 }}
                     transition={{ duration: 0.4 }}
-                    
-                    className="relative w-full max-w-[160px] md:max-w-[280px] aspect-square"
+                    className="relative w-full max-w-[120px] md:max-w-[280px] aspect-square"
                   >
                     <Image
                       src={item.image}
@@ -342,8 +341,7 @@ export default function ShopSection() {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -20 }}
                   transition={{ duration: 0.4 }}
-                 
-                  className="p-5 md:p-10 flex flex-col justify-center gap-3 md:gap-5 border-t md:border-t-0 md:border-l border-[#c9a227]/10"
+                  className="p-4 md:p-10 flex flex-col justify-center gap-2 md:gap-5 border-t md:border-t-0 md:border-l border-[#c9a227]/10"
                 >
 
                   {/* Flavor */}
