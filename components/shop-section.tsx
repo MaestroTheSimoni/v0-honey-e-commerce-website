@@ -233,15 +233,26 @@ export default function ShopSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
 
         {/* ── Section Header ── */}
+        {/* ── Section Header ── */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="flex items-center gap-4 mb-14"
         >
+          {/* 1. Added the Polygon SVG here (on the left of the text) */}
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <polygon
+              points="12,2 22,8.5 22,15.5 12,22 2,15.5 2,8.5"
+              stroke="#c9a227"
+              strokeWidth="1.5"
+              fill="none"
+            />
+          </svg>
+
           <div>
             <h2 className="text-4xl md:text-5xl font-serif text-[#f5f0e6] tracking-wide">Shop</h2>
-            <div className="h-px w-64 bg-gradient-to-r from-[#c9a227] to-transparent mt-2" />
+            {/* 2. Removed the underline div to keep it identical to the Gallery style */}
           </div>
         </motion.div>
 
