@@ -65,14 +65,17 @@ export default function MeetUsSection() {
                 whileTap={{ scale: 0.95 }}
                 className="absolute inset-0 flex items-center justify-center group"
               >
-                <div className="relative">
-                  <Image
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/play-EyZEe1drbsCy48oQJYXXpdnWovNmVx.png"
-                    alt="Play video"
-                    width={80}
-                    height={80}
-                    className="opacity-80 group-hover:opacity-100 transition-opacity"
-                  />
+                <div className="relative w-full aspect-video">
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src="https://www.youtube.com/embed/NIQvLEd18no?autoplay=0&mute=1"
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="rounded-lg shadow-2xl"
+                  ></iframe>
                 </div>
               </motion.button>
 
