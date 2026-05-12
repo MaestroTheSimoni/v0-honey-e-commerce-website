@@ -158,7 +158,7 @@ function SizeButton({
   return (
     <button
       onClick={onClick}
-      className={`flex flex-col items-center gap-1 px-3 py-2 rounded border transition-all duration-300 ${active
+      className={`flex flex-col items-center gap-1 min-w-[60px] px-3 py-2 rounded border transition-all duration-300 ${active
         ? 'border-[#c9a227] bg-[#c9a227]/10 text-[#c9a227]'
         : 'border-[#c9a227]/20 text-[#f5f0e6]/40 hover:border-[#c9a227]/50 hover:text-[#f5f0e6]/70'
         }`}
@@ -272,8 +272,6 @@ export default function ShopSection() {
 
             <div className="grid md:grid-cols-2 gap-0">
 
-              {/* ── Left: Product Image ── */}
-              {/* FIX: reduced min-h and padding on mobile */}
               <div className="relative bg-gradient-to-br from-[#161616] to-[#0d0d0d] p-4 md:p-10 flex flex-col items-center justify-center min-h-[200px] md:min-h-[440px]">
                 <AnimatePresence mode="wait">
                   <motion.div
