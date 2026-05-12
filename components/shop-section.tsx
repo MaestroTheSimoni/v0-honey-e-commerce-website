@@ -39,12 +39,12 @@ const shopItems: ShopItem[] = [
     sizes: [
       { label: '250ml', icon: '🍯' },
       { label: '500ml', icon: '🫙' },
-      { label: '1L',    icon: '🪣' },
+      { label: '1L', icon: '🪣' },
     ],
     weight: '500ml - Bottle',
     image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pic-jar-OEFjjrehSd3m4Su81yIyoywuGk5j4X.png',
     stripeProductId: 'prod_XXXXXXXXXXXXXXX',
-    stripePriceId:   'price_XXXXXXXXXXXXXXX',
+    stripePriceId: 'price_XXXXXXXXXXXXXXX',
     badge: 'Best Seller',
   },
   {
@@ -61,12 +61,12 @@ const shopItems: ShopItem[] = [
     sizes: [
       { label: '250ml', icon: '🍯' },
       { label: '500ml', icon: '🫙' },
-      { label: '1L',    icon: '🪣' },
+      { label: '1L', icon: '🪣' },
     ],
     weight: '500ml - Bottle',
     image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/honey-jar-2naKDpnQ2zzTy7iIh25Mp0AiOdgfq4.png',
     stripeProductId: 'prod_XXXXXXXXXXXXXXX',
-    stripePriceId:   'price_XXXXXXXXXXXXXXX',
+    stripePriceId: 'price_XXXXXXXXXXXXXXX',
     badge: 'Premium',
   },
   {
@@ -83,12 +83,12 @@ const shopItems: ShopItem[] = [
     sizes: [
       { label: '250ml', icon: '🍯' },
       { label: '500ml', icon: '🫙' },
-      { label: '1L',    icon: '🪣' },
+      { label: '1L', icon: '🪣' },
     ],
     weight: '500ml - Bottle',
     image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pic-jar-OEFjjrehSd3m4Su81yIyoywuGk5j4X.png',
     stripeProductId: 'prod_XXXXXXXXXXXXXXX',
-    stripePriceId:   'price_XXXXXXXXXXXXXXX',
+    stripePriceId: 'price_XXXXXXXXXXXXXXX',
   },
   {
     id: 4,
@@ -104,12 +104,12 @@ const shopItems: ShopItem[] = [
     sizes: [
       { label: '250ml', icon: '🍯' },
       { label: '500ml', icon: '🫙' },
-      { label: '1L',    icon: '🪣' },
+      { label: '1L', icon: '🪣' },
     ],
     weight: '500ml - Bottle',
     image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/honey-jar-2naKDpnQ2zzTy7iIh25Mp0AiOdgfq4.png',
     stripeProductId: 'prod_XXXXXXXXXXXXXXX',
-    stripePriceId:   'price_XXXXXXXXXXXXXXX',
+    stripePriceId: 'price_XXXXXXXXXXXXXXX',
     badge: 'New',
   },
 ]
@@ -129,11 +129,11 @@ async function handleStripeCheckout(item: ShopItem, selectedSize: string) {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        priceId:   item.stripePriceId,
+        priceId: item.stripePriceId,
         productId: item.stripeProductId,
-        name:      item.name,
-        size:      selectedSize,
-        quantity:  1,
+        name: item.name,
+        size: selectedSize,
+        quantity: 1,
       }),
     })
     const { url } = await res.json()
@@ -174,11 +174,10 @@ function SizeButton({
   return (
     <button
       onClick={onClick}
-      className={`flex flex-col items-center gap-1 px-3 py-2 rounded border transition-all duration-300 ${
-        active
+      className={`flex flex-col items-center gap-1 px-3 py-2 rounded border transition-all duration-300 ${active
           ? 'border-[#c9a227] bg-[#c9a227]/10 text-[#c9a227]'
           : 'border-[#c9a227]/20 text-[#f5f0e6]/40 hover:border-[#c9a227]/50 hover:text-[#f5f0e6]/70'
-      }`}
+        }`}
     >
       <span className="text-xl">{size.icon}</span>
       <span className="text-[10px] tracking-wider">{size.label}</span>
@@ -188,24 +187,24 @@ function SizeButton({
 
 // ─── MAIN COMPONENT ───────────────────────────────────────────────────────────
 export default function ShopSection() {
-  const ref            = useRef(null)
-  const isInView       = useInView(ref, { once: true, margin: '-100px' })
-  const [current, setCurrent]       = useState(0)
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: '-100px' })
+  const [current, setCurrent] = useState(0)
   const [selectedSize, setSelectedSize] = useState(0)
-  const [loading, setLoading]       = useState(false)
-  const [added, setAdded]           = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [added, setAdded] = useState(false)
   const total = shopItems.length
 
   // Reset size selection when slide changes
   useEffect(() => { setSelectedSize(0); setAdded(false) }, [current])
 
   const prev = () => setCurrent((c) => (c - 1 + total) % total)
-  const next = () => setCurrent((c) => (c + 1)         % total)
+  const next = () => setCurrent((c) => (c + 1) % total)
 
   // Keyboard navigation
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowLeft')  prev()
+      if (e.key === 'ArrowLeft') prev()
       if (e.key === 'ArrowRight') next()
     }
     window.addEventListener('keydown', handler)
@@ -245,16 +244,16 @@ export default function ShopSection() {
           {/* Bee icon */}
           <div className="w-12 h-12 flex items-center justify-center">
             <svg viewBox="0 0 40 40" width="40" height="40" fill="none">
-              <ellipse cx="20" cy="22" rx="9" ry="12" fill="#c9a227" opacity="0.9"/>
-              <ellipse cx="20" cy="14" rx="6" ry="7" fill="#c9a227"/>
-              <ellipse cx="13" cy="18" rx="7" ry="4" fill="#f5f0e6" opacity="0.7" transform="rotate(-20 13 18)"/>
-              <ellipse cx="27" cy="18" rx="7" ry="4" fill="#f5f0e6" opacity="0.7" transform="rotate(20 27 18)"/>
-              <line x1="17" y1="12" x2="15" y2="7"  stroke="#c9a227" strokeWidth="1.2"/>
-              <line x1="23" y1="12" x2="25" y2="7"  stroke="#c9a227" strokeWidth="1.2"/>
-              <circle cx="15" cy="7"  r="1.5" fill="#c9a227"/>
-              <circle cx="25" cy="7"  r="1.5" fill="#c9a227"/>
-              <line x1="14" y1="20" x2="26" y2="20" stroke="#0a0a0a" strokeWidth="1.2" opacity="0.5"/>
-              <line x1="15" y1="25" x2="25" y2="25" stroke="#0a0a0a" strokeWidth="1.2" opacity="0.5"/>
+              <ellipse cx="20" cy="22" rx="9" ry="12" fill="#c9a227" opacity="0.9" />
+              <ellipse cx="20" cy="14" rx="6" ry="7" fill="#c9a227" />
+              <ellipse cx="13" cy="18" rx="7" ry="4" fill="#f5f0e6" opacity="0.7" transform="rotate(-20 13 18)" />
+              <ellipse cx="27" cy="18" rx="7" ry="4" fill="#f5f0e6" opacity="0.7" transform="rotate(20 27 18)" />
+              <line x1="17" y1="12" x2="15" y2="7" stroke="#c9a227" strokeWidth="1.2" />
+              <line x1="23" y1="12" x2="25" y2="7" stroke="#c9a227" strokeWidth="1.2" />
+              <circle cx="15" cy="7" r="1.5" fill="#c9a227" />
+              <circle cx="25" cy="7" r="1.5" fill="#c9a227" />
+              <line x1="14" y1="20" x2="26" y2="20" stroke="#0a0a0a" strokeWidth="1.2" opacity="0.5" />
+              <line x1="15" y1="25" x2="25" y2="25" stroke="#0a0a0a" strokeWidth="1.2" opacity="0.5" />
             </svg>
           </div>
 
@@ -271,21 +270,6 @@ export default function ShopSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative"
         >
-          {/* Ghost cards (side previews) */}
-          <div
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-[40%] w-[340px] h-[400px]
-              bg-[#111111] border border-[#c9a227]/10 rounded-sm opacity-30 pointer-events-none hidden lg:block overflow-hidden"
-          >
-            <div className="w-full h-full flex items-center justify-center p-6">
-              <Image
-                src={shopItems[(current - 1 + total) % total].image}
-                alt="prev"
-                width={200}
-                height={200}
-                className="object-contain opacity-50 scale-90"
-              />
-            </div>
-          </div>
           <div
             className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-[40%] w-[340px] h-[400px]
               bg-[#111111] border border-[#c9a227]/10 rounded-sm opacity-30 pointer-events-none hidden lg:block overflow-hidden"
@@ -364,7 +348,7 @@ export default function ShopSection() {
                     className="w-8 h-8 flex items-center justify-center text-[#c9a227]/40 hover:text-[#c9a227] transition-colors"
                   >
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                      <path d="M13 4L7 10L13 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                      <path d="M13 4L7 10L13 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                     </svg>
                   </button>
                 </div>
@@ -375,7 +359,7 @@ export default function ShopSection() {
                     className="w-8 h-8 flex items-center justify-center text-[#c9a227]/40 hover:text-[#c9a227] transition-colors"
                   >
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                      <path d="M7 4L13 10L7 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                      <path d="M7 4L13 10L7 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                     </svg>
                   </button>
                 </div>
@@ -461,7 +445,7 @@ export default function ShopSection() {
                       {loading ? (
                         <span className="flex items-center gap-2">
                           <svg className="animate-spin w-4 h-4" viewBox="0 0 24 24" fill="none">
-                            <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3" strokeDasharray="31.4" strokeLinecap="round"/>
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3" strokeDasharray="31.4" strokeLinecap="round" />
                           </svg>
                           Processing...
                         </span>
@@ -477,7 +461,7 @@ export default function ShopSection() {
                   <p className="text-[10px] text-[#f5f0e6]/25 tracking-wider flex items-center gap-1.5 pt-1">
                     <svg width="10" height="12" viewBox="0 0 10 12" fill="none">
                       <path d="M5 1L9 2.5V6C9 8.5 7 10.5 5 11C3 10.5 1 8.5 1 6V2.5L5 1Z"
-                        stroke="currentColor" strokeWidth="1" fill="none"/>
+                        stroke="currentColor" strokeWidth="1" fill="none" />
                     </svg>
                     Secure checkout powered by Stripe
                   </p>
@@ -505,11 +489,10 @@ export default function ShopSection() {
             <button
               key={p.id}
               onClick={() => setCurrent(i)}
-              className={`flex items-center gap-3 p-3 border rounded-sm text-left transition-all duration-300 ${
-                i === current
+              className={`flex items-center gap-3 p-3 border rounded-sm text-left transition-all duration-300 ${i === current
                   ? 'border-[#c9a227]/50 bg-[#c9a227]/5'
                   : 'border-[#c9a227]/10 bg-[#111111] hover:border-[#c9a227]/30'
-              }`}
+                }`}
             >
               <div className="w-10 h-10 relative flex-shrink-0">
                 <Image src={p.image} alt={p.name} fill className="object-contain" />
