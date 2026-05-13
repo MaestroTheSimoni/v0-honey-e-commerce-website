@@ -88,7 +88,7 @@ export default function HeroSection() {
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-[#c9a227] mb-4 tracking-wide italic"
             style={{ fontFamily: 'Georgia, serif' }}
           >
-            Apicoltura Piovan
+            Apicoltura TeraMama
           </motion.h1>
 
           {/* Hero Visual with Main Honey Image */}

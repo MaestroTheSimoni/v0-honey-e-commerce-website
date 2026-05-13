@@ -18,22 +18,22 @@ const galleryImages = [
   },
   {
     id: 2,
-    src: "/piovan5.png",
+    src: "/TERAMAMA1.png",
     alt: "Golden honey jar with dipper",
   },
   {
     id: 3,
-    src: "/piovan4.png",
+    src: "/TERAMAMA2.png",
     alt: "Beekeeper working with hive",
   },
   {
     id: 4,
-    src: "/piovan3.png",
+    src: "/TERAMAMA4.png",
     alt: "Sunflowers in golden light",
   },
   {
     id: 5,
-    src: "/piovan2.png",
+    src: "/TERAMAMA1.png",
     alt: "Honey dripping from spoon",
   },
   {
