@@ -18,27 +18,27 @@ const galleryImages = [
   },
   {
     id: 2,
-    src: "/TERAMAMA1.png",
+    src: "/rettore.png",
     alt: "Golden honey jar with dipper",
   },
   {
     id: 3,
-    src: "/TERAMAMA2.png",
+    src: "/rettore2.png",
     alt: "Beekeeper working with hive",
   },
   {
     id: 4,
-    src: "/TERAMAMA4.png",
+    src: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=600&h=600&fit=crop",
     alt: "Sunflowers in golden light",
   },
   {
     id: 5,
-    src: "/TERAMAMA1.png",
+    src: "/rettore.png",
     alt: "Honey dripping from spoon",
   },
   {
     id: 6,
-    src: "/piovan1.png",
+    src: "/rettore2.png",
     alt: "Fresh honeycomb close-up",
   },
   {
